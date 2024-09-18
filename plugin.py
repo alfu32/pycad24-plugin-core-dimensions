@@ -8,7 +8,11 @@ from pycad.ComponentLayers import LayerModel
 from pycad.Drawable import Drawable
 from pycad.Plugin import PluginInterface
 
-class PycadCoreLinePlugin(PluginInterface):
+
+def init_plugin(app):
+    print("initializing dimensions tools",flush=True)
+
+class PycadCoreDimensionsPlugin(PluginInterface):
   
     class Line(Drawable):
         changed = Signal(object)  # Define a custom signal with a generic object type
